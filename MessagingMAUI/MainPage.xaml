@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessagingMAUI.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello from MAUI Messaging App!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Be nice and think twice before sending a text"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Be nice and think twice before sending a text"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Recepient"
+                SemanticProperties.Description="Phone number or email addresss of the recepient"
+                FontSize="Body"
+                HorizontalOptions="Center"/>
+            <Entry
+                x:Name="RecipientBox" 
+                Placeholder="Phone Number" 
+                SemanticProperties.Hint="Enter the recipient here"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand"></Entry>
+
+            <Editor
+                Grid.Row="2"
+                AutoSize="TextChanges"
+                x:Name="MessageBox" 
+                Placeholder="Message" 
+                SemanticProperties.Hint="Enter your message here"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand"></Editor>
+
+            <Button
+                x:Name="SendBtn"
+                Text="Send"
+                SemanticProperties.Hint="Verifies the message is not toxic and sends it"
+                Clicked="OnSendClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
